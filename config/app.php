@@ -176,7 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\GoogleDriveServiceProvider::class,
 
-    ],
+    ],'cipher' => 'AES-128-CBC',
 
     /*
     |--------------------------------------------------------------------------
