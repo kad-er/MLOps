@@ -37,6 +37,12 @@ Route::post('traitement-image-medicale', [ ImageUploadController::class, 'imageU
 Route::get('/test', function () {
     return view('test');});
 
+Route::get('/.well-known/pki-validation/EB66CEF2D726F671BF469E4AFEEAF509.txt', function()
+    {
+        include public_path().'EB66CEF2D726F671BF469E4AFEEAF509.txt';
+    });
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
