@@ -119,9 +119,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
-
-    'cipher' => 'AES-256-CBC',
+    'cipher' => 'AES-128-CBC',
 
     /*
     |--------------------------------------------------------------------------
@@ -176,7 +174,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\GoogleDriveServiceProvider::class,
 
-    ],'cipher' => 'AES-128-CBC',
+    ],
 
     /*
     |--------------------------------------------------------------------------
