@@ -27,11 +27,11 @@ class ImageUploadController extends Controller
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-    
-        $imageName = time().'.'.$request->image->extension();  
+        $filename=$request->file('image')->getClientOriginalName();
+        $imageName = $filename.'.'.$request->image->extension();  
         
         
-        $request->image->storeAs('', $imageName, 'gdrive');
+        $request->image->storeAs('', $filename, 'gdrive');
   
         /* Store $imageName name in DATABASE from HERE */
         $process = SSH::run([
