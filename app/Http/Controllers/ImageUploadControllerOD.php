@@ -14,7 +14,7 @@ class ImageUploadController extends Controller
      */
     public function imageUpload()
     {
-        return view('traitementImageMedicale');
+        return view('objectdetectionImage');
     }
     
     /**
@@ -28,7 +28,7 @@ class ImageUploadController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,avi|max:2048',
         ]);
         $filename=$request->file('image')->getClientOriginalName();
-        $imageName = $filename.'.'.$request->image->extension();  
+        
         
         
         $request->image->storeAs('', $filename, 'gdrive2');
@@ -39,20 +39,19 @@ class ImageUploadController extends Controller
             'python3 detect.py',
         ]);
         sleep(6);
-        $remotePath='/home/kader/drive/MyDrive/Copy of Skin_Segmentation/Outputs/JPEG_Outputs/Output_img1.jpeg';
-        $localPath='/home/kader/driveupload/public/images/Output_img1.jpg';
-        $remotePath2='/home/kader/drive/MyDrive/Copy of Skin_Segmentation/Outputs/Nifti_Outputs/Output_img1.nii.gz';
-        $localPath2='/home/kader/driveupload/public/images/Output_img1.nii.gz';
+        $remotePath='/home/kader/drive/MyDrive/ObjectDetection/runs/detect/exp/'.$filename;
+        $localPath='/home/kader/driveupload/public/images/'.$filename;
+        
         SSH::into('production')->get($remotePath, $localPath);
-        SSH::into('production')->get($remotePath2, $localPath2);
-        $imageName='/images/Output_img1.jpg';
+        
+        $imageName='/images\/'.$filename;
 
         $process = SSH::run([
             'cd drive/MyDrive/Copy\ of\ Skin_Segmentation/Inputs/JPEG_Inputs/',
             'rm *',
         ]);
         return back()
-            ->with('success','You have successfully upload image.')
-            ->with('image',$imageName); 
+            ->with('successOD','You have successfully upload image.')
+            ->with('imageOD',$imageName); 
     }
 }

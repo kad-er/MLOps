@@ -42,7 +42,8 @@ Route::get('/.well-known/pki-validation/', function()
         include public_path().'EB66CEF2D726F671BF469E4AFEEAF509.txt';
     });
 
-
+    Route::get('traitement-image-detection-objet', [ ImageUploadControllerOD::class, 'imageUpload' ])->name('traitement.image.detection.objet');
+    Route::post('traitement-image-detection-objet', [ ImageUploadControllerOD::class, 'imageUploadPost' ])->name('traitement.image.detection.objet.post');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
