@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use SSH;
 
-class ImageUploadController extends Controller
+class ImageUploadControllerOD extends Controller
 {
      /**
      * Display a listing of the resource.
