@@ -25,7 +25,7 @@ class ImageUploadController extends Controller
     public function imageUploadPost(Request $request)
     {
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|mimes:gz|max:2048',
         ]);
         $filename=$request->file('image')->getClientOriginalName();
         $imageName = $filename.'.'.$request->image->extension();  
@@ -35,7 +35,7 @@ class ImageUploadController extends Controller
   
         /* Store $imageName name in DATABASE from HERE */
         $process = SSH::run([
-            'cd drive/MyDrive/Copy\ of\ Skin_Segmentation/Inputs/JPEG_Inputs',
+            'cd drive/MyDrive/Copy\ of\ Skin_Segmentation/Script/',
             'python3 test.py',
         ]);
         sleep(6);

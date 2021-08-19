@@ -57,7 +57,14 @@ return [
             'clientId' => '699356406135-etras5sgh577d461uatthn6icti5b0p6.apps.googleusercontent.com',
             'clientSecret' => 'BTUmtPZwWLciiQFlRZ5dFuN2',
             'refreshToken' => '1//04FORvgfAnN-1CgYIARAAGAQSNwF-L9IrQG-4XgapNfxrZuyHqXqxsdP_635fPcGSix-pSC2_Ga0P6R_PWvXHf8nxa50zr-yxS78',
-            'folderId' => '1QtoTGJiTkmyWuuCA1ugzBIg1phT5L0Oz',
+            'folderId' => '1tjknXACnuT3vRAvuA6IcTReSDtJq8WTG',
+        ],
+        'gdrive2' => [
+            'driver' => 'google',
+            'clientId' => '699356406135-etras5sgh577d461uatthn6icti5b0p6.apps.googleusercontent.com',
+            'clientSecret' => 'BTUmtPZwWLciiQFlRZ5dFuN2',
+            'refreshToken' => '1//04FORvgfAnN-1CgYIARAAGAQSNwF-L9IrQG-4XgapNfxrZuyHqXqxsdP_635fPcGSix-pSC2_Ga0P6R_PWvXHf8nxa50zr-yxS78',
+            'folderId' => '10qmLEXJ6QdvGhvRiidmVP8W2Bw8AHIGm',
         ],
 
     ],
