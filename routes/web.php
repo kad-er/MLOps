@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageUploadController;
+use App\Http\Controllers\ImageUploadControllerObjectDetection;
 
 /*
 |--------------------------------------------------------------------------
