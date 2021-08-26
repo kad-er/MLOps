@@ -40,7 +40,7 @@ class ImageUploadControllerObjectDetection extends Controller
         $imageName='/images\/'.$filename;
 
         $process = SSH::run([
-            'cd drive/MyDrive/Copy\ of\ Skin_Segmentation/Inputs/JPEG_Inputs/',
+            'cd drive/MyDrive/ObjectDetection/runs/detect/',
             'rm *',
         ]);
         return back()
