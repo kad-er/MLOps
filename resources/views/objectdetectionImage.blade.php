@@ -95,7 +95,7 @@
               </div>
               <div class="cold-md-12">
                 <div class="col-md-6" >
-                  <img src="{{ Session::get('imageOD') }}"/>
+                  <img src="{{ Session::get('imageOD') }}" style="width: 450px">
                 </div>
                 
               </div>

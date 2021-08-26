@@ -40,8 +40,12 @@ class ImageUploadControllerObjectDetection extends Controller
         $imageName='/images\/'.$filename;
 
         $process = SSH::run([
-            'cd drive/MyDrive/ObjectDetection/runs/detect/',
-            'rm *',
+            'cd /home/kader/drive/MyDrive/ObjectDetection/runs/detect/',
+            'rm -r *',
+        ]);
+        $process = SSH::run([
+            'cd /home/kader/drive/MyDrive/ObjectDetection/data/images/',
+            'rm -r *',
         ]);
         return back()
             ->with('successOD','You have successfully upload image.')
