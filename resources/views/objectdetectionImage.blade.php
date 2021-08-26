@@ -95,9 +95,13 @@
               </div>
               <div class="cold-md-12">
                 <div class="col-md-6" >
-                  <img src="{{ Session::get('imageOD') }}" style="width: 450px">
+                  <img src="/{{ Session::get('imageOD') }}" style="width: 450px">
                 </div>
-                
+                <div class="col-md-6 mx-auto my-auto" style="float: left;" >
+                  <a href="{{URL::to('/')}}/{{Session::get('imageOD')}}" target="_blank">
+                      <button class="btn btn-primary"><i class="fa fa-download"></i> Download File</button>
+                  </a>
+                </div>
               </div>
               <br/> <br/>
               @endif

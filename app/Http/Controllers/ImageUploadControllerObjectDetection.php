@@ -37,7 +37,7 @@ class ImageUploadControllerObjectDetection extends Controller
         
         SSH::into('production')->get($remotePath, $localPath);
         
-        $imageName='/images\/'.$filename;
+        $imageName='images\/'.$filename;
 
         $process = SSH::run([
             'cd /home/kader/drive/MyDrive/ObjectDetection/runs/detect/',
