@@ -1,27 +1,19 @@
 <?php
-  
+
 namespace App\Http\Controllers;
-  
+
 use Illuminate\Http\Request;
 use SSH;
 
-class ImageUploadControllerOD extends Controller
+class ImageUploadControllerObjectDetection extends Controller
 {
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //
     public function imageUpload()
     {
         return view('objectdetectionImage');
     }
-    
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function imageUploadPost(Request $request)
     {
         $request->validate([

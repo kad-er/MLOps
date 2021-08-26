@@ -32,18 +32,21 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('traitement-image-detection-objet', [ ImageUploadControllerObjectDetection::class, 'imageUpload' ])->name('traitement.image.detection.objet');
+Route::post('traitement-image-detection-objet', [ ImageUploadControllerObjectDetection::class, 'imageUploadPost' ])->name('traitement.image.detection.objet.post');
 Route::get('traitement-image-medicale', [ ImageUploadController::class, 'imageUpload' ])->name('traitement.image.medicale');
 Route::post('traitement-image-medicale', [ ImageUploadController::class, 'imageUploadPost' ])->name('traitement.image.medicale.post');
 Route::get('/test', function () {
     return view('test');});
+
 
 Route::get('/.well-known/pki-validation/', function()
     {
         include public_path().'EB66CEF2D726F671BF469E4AFEEAF509.txt';
     });
 
-    Route::get('traitement-image-detection-objet', [ ImageUploadControllerOD::class, 'imageUpload' ])->name('traitement.image.detection.objet');
-    Route::post('traitement-image-detection-objet', [ ImageUploadControllerOD::class, 'imageUploadPost' ])->name('traitement.image.detection.objet.post');
+    
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
