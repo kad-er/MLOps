@@ -33,7 +33,7 @@ class ImageUploadControllerObjectDetection extends Controller
         ]);
         sleep(6);
         $remotePath='/home/kader/drive/MyDrive/ObjectDetection/runs/detect/exp/'.$filename;
-        $localPath='/home/kader/driveupload/public/images/'.$filename;
+        $localPath='images/'.$filename;
         
         SSH::into('production')->get($remotePath, $localPath);
         

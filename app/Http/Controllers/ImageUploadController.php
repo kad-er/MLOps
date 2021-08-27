@@ -40,9 +40,9 @@ class ImageUploadController extends Controller
         ]);
         sleep(6);
         $remotePath='/home/kader/drive/MyDrive/Copy of Skin_Segmentation/Outputs/JPEG_Outputs/Output_img1.jpeg';
-        $localPath='/home/kader/driveupload/public/images/Output_img1.jpg';
+        $localPath='images/Output_img1.jpg';
         $remotePath2='/home/kader/drive/MyDrive/Copy of Skin_Segmentation/Outputs/Nifti_Outputs/Output_img1.nii.gz';
-        $localPath2='/home/kader/driveupload/public/images/Output_img1.nii.gz';
+        $localPath2='images/Output_img1.nii.gz';
         SSH::into('production')->get($remotePath, $localPath);
         SSH::into('production')->get($remotePath2, $localPath2);
         $imageName='/images/Output_img1.jpg';
