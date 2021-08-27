@@ -46,6 +46,7 @@ class ImageUploadController extends Controller
         $localPath2='images/Output_img1.nii.gz';
         File::delete($localPath);
         File::delete($localPath2);
+        sleep(2);
         SSH::into('production')->get($remotePath, $localPath);
         SSH::into('production')->get($remotePath2, $localPath2);
         $imageName='/images/Output_img1.jpg';
@@ -58,6 +59,7 @@ class ImageUploadController extends Controller
             'cd ../Nifti_Outputs/',
             'rm *'
         ]);
+        sleep(2);
         return back()
             ->with('success','You have successfully upload image.')
             ->with('image',$imageName); 
