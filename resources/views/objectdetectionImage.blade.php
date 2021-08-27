@@ -183,7 +183,7 @@
             <div class="card-body">
               <h5 class="card-title"><a href="traitement-image-medicale">Traitement des images medicales</a></h5>
               <p class="card-text">Grace a ce module vous allez pouvoir traiter vos images medicales</p>
-              <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Découvrez le service</a></div>
+              <div class="read-more"><a href="traitement-image-medicale"><i class="icofont-arrow-right"></i> Découvrez le service</a></div>
             </div>
           </div>
         </div>
