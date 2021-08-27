@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
   
 use Illuminate\Http\Request;
 use SSH;
+use Illuminate\Support\Facades\File;
 
 class ImageUploadController extends Controller
 {
@@ -43,6 +44,8 @@ class ImageUploadController extends Controller
         $localPath='images/Output_img1.jpg';
         $remotePath2='/home/kader/drive/MyDrive/Copy of Skin_Segmentation/Outputs/Nifti_Outputs/Output_img1.nii.gz';
         $localPath2='images/Output_img1.nii.gz';
+        File::delete($localPath);
+        File::delete($localPath2);
         SSH::into('production')->get($remotePath, $localPath);
         SSH::into('production')->get($remotePath2, $localPath2);
         $imageName='/images/Output_img1.jpg';
