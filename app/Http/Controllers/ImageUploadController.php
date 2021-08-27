@@ -28,6 +28,7 @@ class ImageUploadController extends Controller
         $request->validate([
             'image' => 'required|mimes:gz|max:2048',
         ]);
+        sleep(3);
         $filename=$request->file('image')->getClientOriginalName();
         $imageName = $filename.'.'.$request->image->extension();  
         
