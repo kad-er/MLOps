@@ -107,7 +107,7 @@
           <div class="col-md-4 col-lg-4 d-flex align-items-stretch" data-aos="fade-up">
             <div class="icon-box icon-box-pink">
               <div class="icon"><i class="bx bxs-camera-plus"></i></div>
-              <h4 class="title"><a href="">Traitement d'images medicales</a></h4>
+              <h4 class="title"><a href="traitement-image-medicale">Traitement d'images medicales</a></h4>
               <p class="description">Grace a ce module vous allez pouvoir traiter vos images medicales</p>
             </div>
           </div>
@@ -123,7 +123,7 @@
           <div class="col-md-4 col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box icon-box-green">
               <div class="icon"><i class="bx bx-cctv"></i></div>
-              <h4 class="title"><a href="">Traitement des videos surveillances</a></h4>
+              <h4 class="title"><a href="traitement-image-detection-objet">Traitement des videos surveillances</a></h4>
               <p class="description">Vous voulez analyser vos videos de surveillances? ceci est le meilleur outil pour cela</p>
             </div>
           </div>
