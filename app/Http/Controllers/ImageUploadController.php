@@ -62,8 +62,8 @@ class ImageUploadController extends Controller
             'cd ../Nifti_Outputs/',
             'rm *'
         ]);
-        sleep(2);
-        return redirect('/traitement-image-medicale')
+        
+        return redirect()->to('/traitement-image-medicale')
             ->with('success','You have successfully upload image.')
             ->with('image',$imageName); 
     }
