@@ -38,8 +38,8 @@ class ImageUploadController extends Controller
         /* Store $imageName name in DATABASE from HERE */
         $localPath2='images/Output_img1.nii.gz';
         $localPath='images/Output_img1.jpg';
-        File::delete($localPath);
-        File::delete($localPath2);
+        /*File::delete($localPath);
+        File::delete($localPath2);*/
         $process = SSH::run([
             'cd drive/MyDrive/Copy\ of\ Skin_Segmentation/Script/',
             'python3 test.py',
