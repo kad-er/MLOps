@@ -53,7 +53,7 @@ class ImageUploadController extends Controller
         SSH::into('production')->get($remotePath, $localPath);
         SSH::into('production')->get($remotePath2, $localPath2);
         $imageName='/images/Output_img1.jpg';
-        sleep(2);
+        sleep(4);
         $process = SSH::run([
             'cd drive/MyDrive/Copy\ of\ Skin_Segmentation/Inputs/Nifti_images/',
             'rm *',
