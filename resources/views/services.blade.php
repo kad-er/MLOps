@@ -123,7 +123,7 @@
               <div class="card-body">
                 <h5 class="card-title"><a href="#">Traitement des videos surveillances</a></h5>
                 <p class="card-text">Vous voulez analyser vos videos de surveillances? ceci est le meilleur outil pour cela</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Découvrez le service</a></div>
+                <div class="read-more"><a href="traitement-image-detection-objet"><i class="icofont-arrow-right"></i> Découvrez le service</a></div>
               </div>
             </div>
           </div>

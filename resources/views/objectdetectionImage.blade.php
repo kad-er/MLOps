@@ -67,10 +67,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Traitement des images medicales</h2>
+          <h2>Traitement des images Detection d'objets</h2>
           <ol>
             <li><a href="index.html">Accueil</a></li>
-            <li>Traitement des images medicales</li>
+            <li>Traitement des images Detection d'objets</li>
             <li></li>
           </ol>
         </div>
@@ -181,8 +181,8 @@
               <img src="assets/img/service-details-3.jpg" alt="...">
             </div>
             <div class="card-body">
-              <h5 class="card-title"><a href="#">Traitement des videos surveillances</a></h5>
-              <p class="card-text">Vous voulez analyser vos videos de surveillances? ceci est le meilleur outil pour cela</p>
+              <h5 class="card-title"><a href="traitement-image-medicale">Traitement des images medicales</a></h5>
+              <p class="card-text">Grace a ce module vous allez pouvoir traiter vos images medicales</p>
               <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Découvrez le service</a></div>
             </div>
           </div>
