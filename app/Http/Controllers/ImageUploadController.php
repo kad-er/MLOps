@@ -63,7 +63,7 @@ class ImageUploadController extends Controller
             'rm *'
         ]);
         sleep(2);
-        return back()
+        return redirect('/traitement-image-medicale')
             ->with('success','You have successfully upload image.')
             ->with('image',$imageName); 
     }
