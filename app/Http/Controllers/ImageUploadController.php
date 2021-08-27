@@ -35,17 +35,20 @@ class ImageUploadController extends Controller
         $request->image->storeAs('', $filename, 'gdrive');
   
         /* Store $imageName name in DATABASE from HERE */
+        $localPath2='images/Output_img1.nii.gz';
+        $localPath='images/Output_img1.jpg';
+        File::delete($localPath);
+        File::delete($localPath2);
         $process = SSH::run([
             'cd drive/MyDrive/Copy\ of\ Skin_Segmentation/Script/',
             'python3 test.py',
         ]);
         sleep(6);
         $remotePath='/home/kader/drive/MyDrive/Copy of Skin_Segmentation/Outputs/JPEG_Outputs/Output_img1.jpeg';
-        $localPath='images/Output_img1.jpg';
+        
         $remotePath2='/home/kader/drive/MyDrive/Copy of Skin_Segmentation/Outputs/Nifti_Outputs/Output_img1.nii.gz';
-        $localPath2='images/Output_img1.nii.gz';
-        File::delete($localPath);
-        File::delete($localPath2);
+        
+        
         sleep(2);
         SSH::into('production')->get($remotePath, $localPath);
         SSH::into('production')->get($remotePath2, $localPath2);
