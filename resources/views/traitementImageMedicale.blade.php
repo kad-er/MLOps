@@ -95,13 +95,13 @@
               </div>
               <div class="cold-md-12">
                 <div class="col-md-6" >
-                  <img src="{{ Session::get('image') }}?refreshed"/>
+                  <img src="{{ Session::get('image') }}?={{Date('U')}}"/>
                 </div>
                 <div class="col-md-6 mx-auto my-auto" style="float: left;" >
-                  <a href="{{URL::to('/')}}/images/Output_img1.jpg?refreshed" target="_blank">
+                  <a href="{{URL::to('/')}}/images/Output_img1.jpg?={{Date('U')}}" target="_blank">
                       <button class="btn btn-primary"><i class="fa fa-download"></i> Download File jpg</button>
                   </a>
-                  <a href="{{URL::to('/')}}/images/Output_img1.nii.gz?refreshed" target="_blank">
+                  <a href="{{URL::to('/')}}/images/Output_img1.nii.gz?={{Date('U')}}" target="_blank">
                     <button class="btn btn-primary"><i class="fa fa-download"></i> Download File Nifti</button>
                 </a>
                 </div>
