@@ -47,6 +47,7 @@ class ImageUploadControllerObjectDetection extends Controller
             'cd /home/kader/drive/MyDrive/ObjectDetection/data/images/',
             'rm -r *',
         ]);
+        sleep(3);
         return back()
             ->with('successOD','You have successfully upload image.')
             ->with('imageOD',$imageName); 
