@@ -50,6 +50,10 @@ class ImageUploadController extends Controller
         $process = SSH::run([
             'cd drive/MyDrive/Copy\ of\ Skin_Segmentation/Inputs/Nifti_images/',
             'rm *',
+            'cd ../../Outputs/JPEG_Outputs/',
+            'rm *',
+            'cd ../Nifti_Outputs/',
+            'rm *'
         ]);
         return back()
             ->with('success','You have successfully upload image.')
