@@ -95,7 +95,16 @@
               </div>
               <div class="cold-md-12">
                 <div class="col-md-6" >
+                  @if(Session::get('typeF')=='image')
                   <img src="/{{ Session::get('imageOD') }}" style="width: 450px">
+                  @else
+                  <video width="450" height="250" controls>
+                    <source src="/{{ Session::get('imageOD') }}" type="video/mp4">
+                  </video>
+                    
+                    
+                    
+                  @endif
                 </div>
                 <div class="col-md-6 mx-auto my-auto" style="float: left;" >
                   <a href="{{URL::to('/')}}/{{Session::get('imageOD')}}" target="_blank">
