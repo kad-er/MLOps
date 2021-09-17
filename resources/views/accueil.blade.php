@@ -115,16 +115,16 @@
           <div class="col-md-4 col-lg-4 d-flex align-items-stretch" data-aos="fade-down" data-aos-delay="250">
             <div class="icon-box icon-box-cyan">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Traitement des manuscrits arabes</a></h4>
-              <p class="description">Ce module va vous permettre d'extraire du texte arabe depuis des images</p>
+              <h4 class="title"><a href="traitement-image-detection-genre-&-visage">Traitement des images detection de visage et de genre</a></h4>
+              <p class="description">Ce module va vous permettre d'analyser vos images afin de detecter les visages et le genre de la personne</p>
             </div>
           </div>
 
           <div class="col-md-4 col-lg-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box icon-box-green">
               <div class="icon"><i class="bx bx-cctv"></i></div>
-              <h4 class="title"><a href="traitement-image-detection-objet">Traitement des videos surveillances</a></h4>
-              <p class="description">Vous voulez analyser vos videos de surveillances? ceci est le meilleur outil pour cela</p>
+              <h4 class="title"><a href="traitement-image-detection-objet">Traitement des images et de videos detection d'objets</a></h4>
+              <p class="description">Vous voulez analyser vos images ou bien vos videos de surveillances? ceci est le meilleur outil pour cela</p>
             </div>
           </div>
 

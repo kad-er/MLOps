@@ -44,7 +44,7 @@ class ImageUploadController extends Controller
             'cd drive/MyDrive/Copy\ of\ Skin_Segmentation/Script/',
             'python3 test.py',
         ]);
-        sleep(6);
+        //sleep(6);
         $remotePath='/home/kader/drive/MyDrive/Copy of Skin_Segmentation/Outputs/JPEG_Outputs/Output_img1.jpeg';
         
         $remotePath2='/home/kader/drive/MyDrive/Copy of Skin_Segmentation/Outputs/Nifti_Outputs/Output_img1.nii.gz';
@@ -54,7 +54,7 @@ class ImageUploadController extends Controller
         SSH::into('production')->get($remotePath, $localPath);
         SSH::into('production')->get($remotePath2, $localPath2);
         $imageName='/images/Output_img1.jpg';
-        sleep(3);
+        //sleep(3);
         $process = SSH::run([
             'cd drive/MyDrive/Copy\ of\ Skin_Segmentation/Inputs/Nifti_images/',
             'rm *',
@@ -63,7 +63,7 @@ class ImageUploadController extends Controller
             'cd ../Nifti_Outputs/',
             'rm *'
         ]);
-        sleep(2);
+        //sleep(2);
         return redirect()->to('/traitement-image-medicale')
             ->with('success','You have successfully upload image.')
             ->with('image',$imageName); 

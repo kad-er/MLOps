@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\ImageUploadControllerObjectDetection;
-
+use App\Http\Controllers\ImageUploadControllerFaceAndGenderDetection;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,32 +14,37 @@ use App\Http\Controllers\ImageUploadControllerObjectDetection;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//accueil
 Route::get('/', function () {
     return view('accueil');
 });
-Route::get('/driveup', function () {
-    return view('imageUpload');
-});
+//index
 Route::get('/index', function () {
     return view('accueil');
 });
+//services
 Route::get('/services', function () {
     return view('services');
 });
+//about
 Route::get('/about', function () {
     return view('about');
 });
+//contact page
 Route::get('/contact', function () {
     return view('contact');
 });
-
+//yolo
 Route::get('traitement-image-detection-objet', [ ImageUploadControllerObjectDetection::class, 'imageUpload' ])->name('traitement.image.detection.objet');
 Route::post('traitement-image-detection-objet', [ ImageUploadControllerObjectDetection::class, 'imageUploadPost' ])->name('traitement.image.detection.objet.post');
+
+//skin segmentation
 Route::get('traitement-image-medicale', [ ImageUploadController::class, 'imageUpload' ])->name('traitement.image.medicale');
 Route::post('traitement-image-medicale', [ ImageUploadController::class, 'imageUploadPost' ])->name('traitement.image.medicale.post');
-Route::get('/test', function () {
-    return view('test');});
+
+//cvlib
+Route::get('traitement-image-detection-genre-&-visage', [ ImageUploadControllerFaceAndGenderDetection::class, 'imageUpload' ])->name('traitement.image.detection.genre.visage');
+Route::post('traitement-image-detection-genre-&-visage', [ ImageUploadControllerFaceAndGenderDetection::class, 'imageUploadPost' ])->name('traitement.image.detection.genre.visage.post');
 
 
 Route::get('/.well-known/pki-validation/', function()

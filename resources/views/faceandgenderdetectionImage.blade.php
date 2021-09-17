@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Services - Moderna Bootstrap Template</title>
+  <title>About - Moderna Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -50,12 +50,10 @@
 
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
-        
-            <li><a href="index">Accueil</a></li>
-            <li><a href="about">A propos</a></li>
-            <li class="active"><a href="services">Services</a></li>
-            <li><a href="contact">Contactez nous</a></li>
-        
+          <li><a href="index">Accueil</a></li>
+          <li ><a href="about">A propos</a></li>
+          <li class="active"><a href="services">Services</a></li>
+          <li><a href="contact">Contactez nous</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -64,78 +62,158 @@
 
   <main id="main">
 
-    <!-- ======= Our Services Section ======= -->
+    <!-- ======= About Us Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Nos services</h2>
+          <h2>Traitement des images Detection de genre et de visage</h2>
           <ol>
             <li><a href="index.html">Accueil</a></li>
-            <li>Nos services</li>
+            <li>Traitement des images Detection de genre et de visage</li>
+            <li></li>
           </ol>
         </div>
 
       </div>
-    </section><!-- End Our Services Section -->
+    </section><!-- End About Us Section -->
 
-    <!-- ======= Services Section ======= -->
-    <!-- End Services Section -->
-
-    <!-- ======= Why Us Section ======= -->
-   <!-- End Why Us Section -->
-
-    <!-- ======= Service Details Section ======= -->
-    <section class="service-details">
+    <!-- ======= About Section ======= -->
+    <section class="about" data-aos="fade-up">
       <div class="container">
 
-        <div class="row">
-          <div class="col-md-4 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/service-details-1.jpg" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="traitement-image-medicale">Traitement d'images medicales</a></h5>
-                <p class="card-text">Grace a ce module vous allez pouvoir traiter vos images medicales</p>
-                <div class="read-more"><a href="traitement-image-medicale"><i class="icofont-arrow-right"></i> Découvrez le service</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/service-details-2.jpg" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="traitement-image-detection-genre-&-visage">Traitement des images detection de visage et de genre</a></h5>
-                <p class="card-text">Ce module va vous permettre d'analyser vos images afin de detecter les visages et le genre de la personne</p>
-                <div class="read-more"><a href="traitement-image-detection-genre-&-visage"><i class="icofont-arrow-right"></i> Découvrez le service</a></div>
-              </div>
-            </div>
+        <div class="panel panel-primary">
 
-          </div>
-          <div class="col-md-4 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/service-details-3.jpg" alt="...">
+            <div class="panel-body">
+      
+              @if ($message = Session::get('successFAGD'))
+              <div class="row mb-5">
+                <div class="alert alert-success alert-block col-md-12" style="width: 100%">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>{{ $message }}</strong>
+                </div><br>
               </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="traitement-image-detection-objet">Traitement des images et de videos detection d'objets</a></h5>
-                <p class="card-text">Vous voulez analyser vos images ou bien vos videos de surveillances? ceci est le meilleur outil pour cela</p>
-                <div class="read-more"><a href="traitement-image-detection-objet"><i class="icofont-arrow-right"></i> Découvrez le service</a></div>
+              <div class="cold-md-12">
+                <div class="col-md-6" >
+                  
+                  <img src="/{{ Session::get('imageFAGD') }}" style="width: 450px">
+
+                </div>
+                <div class="col-md-6 mx-auto my-auto" style="float: left;" >
+                  <a href="{{URL::to('/')}}/{{Session::get('imageFAGD')}}" target="_blank">
+                      <button class="btn btn-primary"><i class="fa fa-download"></i> Download File</button>
+                  </a>
+                </div>
               </div>
+              <br/> <br/>
+              @endif
+
+              @if (count($errors) > 0)
+              <div class="alert alert-danger">
+                  <strong>Whoops!</strong> There were some problems with your input.
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+                </div>
+              <br/><br/>
+             @endif
             </div>
           </div>
+      <div class="row col-md-12">
+    
+        <div class="col-md-12">
+            
+        
+                <form action="{{ route('traitement.image.detection.genre.visage.post') }}" method="POST" enctype="multipart/form-data" >
+                    @csrf
+                    <div class="row">
+                      
+                      <div class="form-check col-md-12 mx-3">
+                        <input class="form-check-input" type="radio" name="radio" id="radio1" value="detect_face" checked>
+                        <label class="form-check-label" for="radio1">
+                          Detection de visage
+                        </label>
+                      </div>
+                      <div class="form-check col-md-12 mx-3">
+                        <input class="form-check-input" type="radio" name="radio" id="radio2" value="detect_gender">
+                        <label class="form-check-label" for="radio2">
+                          Detection du genre
+                        </label>
+                      </div>
+                        <div class="col-md-6 "" >
+                            <input type="file" name="image" class="form-control">
+                        </div>
+        
+                        <div class="col-md">
+                            <button type="submit" class="btn btn-success">Upload</button>
+                        </div>
+        
+                    </div>
+                </form>
+        
+            </div>    
+          </div>
+              
+        
+            
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Facts Section ======= -->
+    <!-- End Facts Section -->
+
+    <!-- ======= Our Skills Section ======= -->
+    <section class="service-details" data-aos="fade-up">
+      
+
+        <div class="section-title">
+          <h2>Testez les autres services</h2>
           
+        </div>
+        <div class="container">
+          
+        
+        <div class="row">
+        <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+          <div class="card">
+            <div class="card-img">
+              <img src="assets/img/service-details-2.jpg" alt="...">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><a href="traitement-image-detection-objet">Traitement des images et de videos detection d'objets</a></h5>
+              <p class="card-text">Vous voulez analyser vos images ou bien vos videos de surveillances? ceci est le meilleur outil pour cela</p>
+              <div class="read-more"><a href="traitement-image-detection-objet"><i class="icofont-arrow-right"></i> Découvrez le service</a></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+          <div class="card">
+            <div class="card-img">
+              <img src="assets/img/service-details-3.jpg" alt="...">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><a href="traitement-image-medicale">Traitement des images medicales</a></h5>
+              <p class="card-text">Grace a ce module vous allez pouvoir traiter vos images medicales</p>
+              <div class="read-more"><a href="traitement-image-medicale"><i class="icofont-arrow-right"></i> Découvrez le service</a></div>
+            </div>
           </div>
         </div>
+        </div>
+      </div>
+              
+              
+              
+              
+            
 
       </div>
-    </section><!-- End Service Details Section -->
+    </section><!-- End Our Skills Section -->
 
-    <!-- ======= Pricing Section ======= -->
-    <!-- End Pricing Section -->
+    <!-- ======= Tetstimonials Section ======= -->
+    <!-- End Ttstimonials Section -->
 
   </main><!-- End #main -->
 
