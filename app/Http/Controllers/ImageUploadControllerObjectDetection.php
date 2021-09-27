@@ -52,7 +52,7 @@ class ImageUploadControllerObjectDetection extends Controller
         $ssh=SSH::into('production')->define('deploy', array(
             'cd /home/kader/drive/MyDrive/ObjectDetection/',
             'sleep 3',
-            'python3 detect.py',
+            'python3 detect2.py --source=data/images/'.$filename,
             
         ));
 
@@ -71,12 +71,12 @@ class ImageUploadControllerObjectDetection extends Controller
 
         
         $ssh=SSH::into('production')->define('deploy2', array(
-            'cd /home/kader/drive/MyDrive/ObjectDetection/runs/detect/',
-            'rm -r *',
+            'cd /home/kader/drive/MyDrive/ObjectDetection/runs/detect/exp',
+            'rm -r '.$filename,
             'pwd',
             'echo deleted',
             'cd /home/kader/drive/MyDrive/ObjectDetection/data/images/',
-            'rm -r *',
+            'rm -r '.$filename,
             'pwd',
             'echo deleted',
         ));

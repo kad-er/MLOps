@@ -62,11 +62,11 @@ class ImageUploadControllerFaceAndGenderDetection extends Controller
 
         $process = SSH::run([
             'cd /home/kader/drive/MyDrive/cvlib/input/',
-            'rm -r *',
+            'rm -r '.$filename,
         ]);
         $process = SSH::run([
             'cd /home/kader/drive/MyDrive/cvlib/output/',
-            'rm -r *',
+            'rm -r '.$filename,
         ]);
         //sleep(3);
         return back()
