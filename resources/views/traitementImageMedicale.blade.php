@@ -102,10 +102,10 @@
                   <img src="{{ Session::get('image') }}?={{Date('U')}}"/>
                 </div>
                 <div class="col-md-6 mx-auto my-auto" style="float: left;" >
-                  <a href="{{URL::to('/')}}/images/Output_img1.jpg?={{Date('U')}}" target="_blank">
+                  <a href="{{URL::to('/')}}/{{ Session::get('image') }}?={{Date('U')}}" target="_blank">
                       <button class="btn btn-primary"><i class="fa fa-download"></i> Download File jpg</button>
                   </a>
-                  <a href="{{URL::to('/')}}/images/Output_img1.nii.gz?={{Date('U')}}" target="_blank">
+                  <a href="{{URL::to('/')}}/{{ Session::get('imagenifti') }}?={{Date('U')}}" target="_blank">
                     <button class="btn btn-primary"><i class="fa fa-download"></i> Download File Nifti</button>
                 </a>
                 </div>

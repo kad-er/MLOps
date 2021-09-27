@@ -30,42 +30,47 @@ class ImageUploadController extends Controller
         ]);
         sleep(3);
         $filename=$request->file('image')->getClientOriginalName();
-        $imageName = $filename.'.'.$request->image->extension();  
-        
+        //$imageName = $filename.'.nii.'.$request->image->extension();  
+        $filenames = pathinfo($filename, PATHINFO_FILENAME);
+        $file=pathinfo($filenames, PATHINFO_FILENAME);
+
         
         $request->image->storeAs('', $filename, 'gdrive');
   
         /* Store $imageName name in DATABASE from HERE */
-        $localPath2='images/Output_img1.nii.gz';
-        $localPath='images/Output_img1.jpg';
+        $localPath2='images/'.$file.'_output.nii.gz';
+        $localPath='images/'.$file.'_output.jpg';
         /*File::delete($localPath);
         File::delete($localPath2);*/
         $process = SSH::run([
             'cd drive/MyDrive/Copy\ of\ Skin_Segmentation/Script/',
-            'python3 test.py',
+            'python3 test.py '.$filename,
         ]);
         //sleep(6);
-        $remotePath='/home/kader/drive/MyDrive/Copy of Skin_Segmentation/Outputs/JPEG_Outputs/Output_img1.jpeg';
+        $remotePath='/home/kader/drive/MyDrive/Copy of Skin_Segmentation/Outputs/JPEG_Outputs/'.$file.'_output.jpg';
         
-        $remotePath2='/home/kader/drive/MyDrive/Copy of Skin_Segmentation/Outputs/Nifti_Outputs/Output_img1.nii.gz';
+        $remotePath2='/home/kader/drive/MyDrive/Copy of Skin_Segmentation/Outputs/Nifti_Outputs/'.$file.'_output.nii.gz';
         
         
         
         SSH::into('production')->get($remotePath, $localPath);
         SSH::into('production')->get($remotePath2, $localPath2);
-        $imageName='/images/Output_img1.jpg';
+        $imageName='images/'.$file.'_output.jpg';
+        $imagenifti='images/'.$file.'_output.nii.gz';
         //sleep(3);
         $process = SSH::run([
             'cd drive/MyDrive/Copy\ of\ Skin_Segmentation/Inputs/Nifti_images/',
-            'rm *',
+            'rm '.$filename,
             'cd ../../Outputs/JPEG_Outputs/',
-            'rm *',
+            'rm '.$file.'_output.jpg',
             'cd ../Nifti_Outputs/',
-            'rm *'
+            'rm '.$file.'_output.nii.gz',
         ]);
         //sleep(2);
         return redirect()->to('/traitement-image-medicale')
             ->with('success','You have successfully upload image.')
-            ->with('image',$imageName); 
+            ->with('image',$imageName)
+            ->with('imagenifti',$imagenifti);
+            
     }
 }
