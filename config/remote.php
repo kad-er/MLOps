@@ -28,7 +28,7 @@ return [
 
     'connections' => [
         'production' => [
-            'host'      => '2.tcp.ngrok.io:13455',
+            'host'      => '8.tcp.ngrok.io:10738',
             'username'  => 'kader',
             'password'  => 'kader',
             'key'       => '',
