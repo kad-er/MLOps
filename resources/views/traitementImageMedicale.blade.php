@@ -5,13 +5,16 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>About - Moderna Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>MLOps - Skin segmentation page</title>
+  <meta content="MLOps is a website which propose test Machine learning based solutions such skin segmentation, object detections , face and gender detection" name="description">
+  <meta content="MLops,Machine learning,ML,skin segmentation,YOLO v5,YOLO,CVLIB,Cvlib,object detection,face detection,gender detection" name="keywords">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="robots" content="index, follow">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
@@ -43,17 +46,18 @@
     <div class="container">
 
       <div class="logo float-left">
-        <h1 class="text-light"><a href="index.html"><span>MlOPS</span></a></h1>
+        <!--h1 class="text-light"><a href="index.html"><span>MlOPS</span></a></h1-->
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <a href="index"><img src="assets/img/logo.png" alt="" class="img-fluid" style="max-height: 50px"></a>
       </div>
 
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
-          <li><a href="index">Accueil</a></li>
-          <li ><a href="about">A propos</a></li>
+          <li><a href="index">Homepage</a></li>
+          <li ><a href="about">About</a></li>
           <li class="active"><a href="services">Services</a></li>
-          <li><a href="contact">Contactez nous</a></li>
+          <li><a href="contact">Contact us</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -67,10 +71,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Traitement des images medicales</h2>
+          <h2>Medical image processing</h2>
           <ol>
-            <li><a href="index.html">Accueil</a></li>
-            <li>Traitement des images medicales</li>
+            <li><a href="index">Homepage</a></li>
+            <li>Medical image processing</li>
             <li></li>
           </ol>
         </div>
@@ -158,7 +162,7 @@
       
 
         <div class="section-title">
-          <h2>Testez les autres services</h2>
+          <h2>Try other services</h2>
           
         </div>
         <div class="container">
@@ -171,9 +175,9 @@
               <img src="assets/img/service-details-2.jpg" alt="...">
             </div>
             <div class="card-body">
-              <h5 class="card-title"><a href="#">Traitement des manuscrits arabes</a></h5>
-              <p class="card-text">Ce module va vous permettre d'extraire du texte arabe depuis des images</p>
-              <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Découvrez le service</a></div>
+              <h5 class="card-title"><a href="traitement-image-detection-genre-&-visage">Treatment of facial and gender images</a></h5>
+              <p class="card-text">This module will allow you to analyze your images in order to detect the faces and the gender of the person</p>
+              <div class="read-more"><a href="traitement-image-detection-genre-&-visage"><i class="icofont-arrow-right"></i> Discover the service</a></div>
             </div>
           </div>
 
@@ -184,9 +188,9 @@
               <img src="assets/img/service-details-3.jpg" alt="...">
             </div>
             <div class="card-body">
-              <h5 class="card-title"><a href="traitement-image-detection-objet">Traitement des videos surveillances</a></h5>
-              <p class="card-text">Vous voulez analyser vos videos de surveillances? ceci est le meilleur outil pour cela</p>
-              <div class="read-more"><a href="traitement-image-detection-objet"><i class="icofont-arrow-right"></i> Découvrez le service</a></div>
+              <h5 class="card-title"><a href="traitement-image-detection-objet">Treatment of images and videos Detection of objects</a></h5>
+              <p class="card-text">You want to analyze your images or your surveillance videos? This tool is exactly what you need</p>
+              <div class="read-more"><a href="traitement-image-detection-objet"><i class="icofont-arrow-right"></i> Discover the service</a></div>
             </div>
           </div>
         </div>
@@ -230,39 +234,37 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Accès rapide</h4>
+            <h4>Quick access</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Accueil</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">A propos</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Nos services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index">Homepage</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="about">About</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="services">Our services</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Nos services</h4>
+            <h4>Our services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Traitement d'images medicales</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Traitement des manuscrits arabes</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Traitement des videos surveillanecs</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="traitement-image-medicale">Medical image processing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="traitement-image-detection-genre-&-visage">Treatment of facial and gender images</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="traitement-image-detection-objet">Treatment of images and videos Detection of objects</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contactez nous</h4>
+            <h4>Contact us</h4>
             <p>
               Campus Targa Ouzemmour <br>
-              Route de Targa Ouzemmour<br>
-              Béjaia, Algérie <br><br>
-              <strong>Tel:</strong> +213 793 91 16 52<br>
-              <strong>Email:</strong> info@example.com<br>
+              Targa Ouzemmour<br>
+              Bejaia, Algeria <br><br>
+              <strong>Phone:</strong> +213 793 91 16 52<br>
+              <strong>Email:</strong> bejaia.etudiant3@gmail.com<br>
             </p>
 
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>A propos de nous</h3>
+            <h3>About Us</h3>
             <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>

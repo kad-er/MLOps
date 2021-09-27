@@ -32,15 +32,26 @@ class ImageUploadControllerObjectDetection extends Controller
         
         
         $request->image->storeAs('', $filename, 'gdrive2');
-  
+        Log::info("stored");
         /* Store $imageName name in DATABASE from HERE */
+        $ssh=SSH::into('production')->define('deploy1', array(
+            'ls -l /home/kader/drive/MyDrive/ObjectDetection/data/images/',
+            
+        ));
+        sleep(2);
+        $ssh->task('deploy1', function($line){
+
+            Log::info($line);
+            if ($line == 'total 0'){
+                sleep(2);
+            }
+            });
         
-        
-        //sleep(6);
         
 
         $ssh=SSH::into('production')->define('deploy', array(
             'cd /home/kader/drive/MyDrive/ObjectDetection/',
+            'sleep 3',
             'python3 detect.py',
             
         ));
@@ -58,14 +69,23 @@ class ImageUploadControllerObjectDetection extends Controller
         
         $imageName='images\/'.$filename;
 
-        $process = SSH::run([
+        
+        $ssh=SSH::into('production')->define('deploy2', array(
             'cd /home/kader/drive/MyDrive/ObjectDetection/runs/detect/',
             'rm -r *',
-        ]);
-        $process = SSH::run([
+            'pwd',
+            'echo deleted',
             'cd /home/kader/drive/MyDrive/ObjectDetection/data/images/',
             'rm -r *',
-        ]);
+            'pwd',
+            'echo deleted',
+        ));
+                $ssh->task('deploy2', function($line){
+
+            Log::info($line);
+            });
+            
+        
         //sleep(3);
         return back()
             ->with('successOD','You have successfully upload image.')
