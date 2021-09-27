@@ -100,7 +100,7 @@
               <div class="cold-md-12">
                 <div class="col-md-6" >
                   
-                  <img src="/{{ Session::get('imageFAGD') }}" style="width: 450px">
+                  <img src="/{{ Session::get('imageFAGD') }}?={{Date('U')}}" style="width: 450px">
 
                 </div>
                 <div class="col-md-6 mx-auto my-auto" style="float: left;" >
