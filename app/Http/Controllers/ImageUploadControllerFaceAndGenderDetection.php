@@ -55,7 +55,7 @@ class ImageUploadControllerFaceAndGenderDetection extends Controller
 
 
         $remotePath='/home/kader/drive/MyDrive/cvlib/output/'.$filename;
-        $localPath='images/fagoutput'.$filename;
+        $localPath='images/fagoutput/'.$filename;
         
         SSH::into('production')->get($remotePath, $localPath);
         
