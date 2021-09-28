@@ -16,14 +16,23 @@ class MailController extends Controller {
        });
        echo "Basic Email Sent. Check your inbox.";
     }*/
-    public function html_email() {
-
-       $data = array('name'=>"Virat Gandhi");
-       Mail::send('mail', $data, function($message) {
-          $message->to('tagkader@hotmail.fr', 'Tutorials Point')->subject
-             ('Laravel HTML Testing Mail');
-          $message->from('xyz@gmail.com','Virat Gandhi');
+    public function retview()
+    {
+        return view('contact');
+    }
+    public function html_email(Request $request) {
+        $name= $request->name;
+        $email= $request->email;
+        $sub=$request->subject;
+        $message=$request->message;
+        $data = array('name'=>$name,'email'=>$email,'subject'=>$sub,'message'=>$message);
+        Mail::send('mail', ["data"=>$data], function($message) {
+            $message->to('tagkader@hotmail.fr', 'Mail from website')->subject
+                ('Mail from website');
+            $message->from('xyz@gmail.com','MLOps.tk contact form');
        });
+
+       
        echo "HTML Email Sent. Check your inbox.";
     }
     

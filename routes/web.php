@@ -35,7 +35,8 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('sendhtmlemail','MailController@html_email');
+Route::get('contact', [ MailController::class, 'retview' ])->name('contactus');
+Route::post('contact',[MailController::class, 'html_email'])->name('send.email');
 
 //yolo
 Route::get('traitement-image-detection-objet', [ ImageUploadControllerObjectDetection::class, 'imageUpload' ])->name('traitement.image.detection.objet');
