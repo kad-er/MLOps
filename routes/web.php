@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\ImageUploadControllerObjectDetection;
 use App\Http\Controllers\ImageUploadControllerFaceAndGenderDetection;
+use App\Http\Controllers\MailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +35,8 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::get('sendhtmlemail','MailController@html_email');
+
 //yolo
 Route::get('traitement-image-detection-objet', [ ImageUploadControllerObjectDetection::class, 'imageUpload' ])->name('traitement.image.detection.objet');
 Route::post('traitement-image-detection-objet', [ ImageUploadControllerObjectDetection::class, 'imageUploadPost' ])->name('traitement.image.detection.objet.post');
