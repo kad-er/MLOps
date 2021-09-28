@@ -36,10 +36,11 @@ class ImageUploadController extends Controller
 
         
         $request->image->storeAs('', $filename, 'gdrive');
-  
+
+        $request->image->storeAs('', $filename, 'skinsegup');
         /* Store $imageName name in DATABASE from HERE */
-        $localPath2='images/'.$file.'_output.nii.gz';
-        $localPath='images/'.$file.'_output.jpg';
+        $localPath2='images/skinsegoutput/'.$file.'_output.nii.gz';
+        $localPath='images/skinsegoutput/'.$file.'_output.jpg';
         /*File::delete($localPath);
         File::delete($localPath2);*/
         $process = SSH::run([
@@ -55,8 +56,8 @@ class ImageUploadController extends Controller
         
         SSH::into('production')->get($remotePath, $localPath);
         SSH::into('production')->get($remotePath2, $localPath2);
-        $imageName='images/'.$file.'_output.jpg';
-        $imagenifti='images/'.$file.'_output.nii.gz';
+        $imageName='images/skinsegoutput/'.$file.'_output.jpg';
+        $imagenifti='images/skinsegoutput/'.$file.'_output.nii.gz';
         //sleep(3);
         $process = SSH::run([
             'cd drive/MyDrive/Copy\ of\ Skin_Segmentation/Inputs/Nifti_images/',

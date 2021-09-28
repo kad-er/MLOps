@@ -32,6 +32,8 @@ class ImageUploadControllerObjectDetection extends Controller
         
         
         $request->image->storeAs('', $filename, 'gdrive2');
+        $request->image->storeAs('', $filename, 'objectdetup');
+
         Log::info("stored");
         /* Store $imageName name in DATABASE from HERE */
         $ssh=SSH::into('production')->define('deploy1', array(
@@ -63,11 +65,11 @@ class ImageUploadControllerObjectDetection extends Controller
 
 
         $remotePath='/home/kader/drive/MyDrive/ObjectDetection/runs/detect/exp/'.$filename;
-        $localPath='images/'.$filename;
+        $localPath='images/objdetoutput/'.$filename;
         
         SSH::into('production')->get($remotePath, $localPath);
         
-        $imageName='images\/'.$filename;
+        $imageName='images/objdetoutput/'.$filename;
 
         
         $ssh=SSH::into('production')->define('deploy2', array(

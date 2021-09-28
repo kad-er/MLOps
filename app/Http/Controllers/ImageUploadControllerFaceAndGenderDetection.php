@@ -27,7 +27,8 @@ class ImageUploadControllerFaceAndGenderDetection extends Controller
         
         
         $request->image->storeAs('', $filename, 'gdrive3');
-  
+        $request->image->storeAs('', $filename, 'faceandgenderup');
+
         /* Store $imageName name in DATABASE from HERE */
         
         
@@ -54,11 +55,11 @@ class ImageUploadControllerFaceAndGenderDetection extends Controller
 
 
         $remotePath='/home/kader/drive/MyDrive/cvlib/output/'.$filename;
-        $localPath='images/'.$filename;
+        $localPath='images/fagoutput'.$filename;
         
         SSH::into('production')->get($remotePath, $localPath);
         
-        $imageName='images\/'.$filename;
+        $imageName='images/fagoutput/'.$filename;
 
         $process = SSH::run([
             'cd /home/kader/drive/MyDrive/cvlib/input/',
