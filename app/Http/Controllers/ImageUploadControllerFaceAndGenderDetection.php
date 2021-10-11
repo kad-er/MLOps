@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use SSH;
 use Log;
+use DB;
 
 class ImageUploadControllerFaceAndGenderDetection extends Controller
 {
@@ -19,7 +20,7 @@ class ImageUploadControllerFaceAndGenderDetection extends Controller
     public function imageUploadPost(Request $request)
     {
         $request->validate([
-            'image' => 'required|mimes:jpeg,png,jpg,gif,svg,mp4|max:10240',
+            'image' => 'required|mimes:jpeg,png,jpg,gif,svg|max:10240',
         ]);
         $filename=$request->file('image')->getClientOriginalName();
         $foo = \File::extension($filename);
@@ -28,7 +29,8 @@ class ImageUploadControllerFaceAndGenderDetection extends Controller
         
         $request->image->storeAs('', $filename, 'gdrive3');
         $request->image->storeAs('', $filename, 'faceandgenderup');
-
+        $data=array('name'=>$filename,"filetype"=>"image","service"=>"face and gender detection","userid"=>$request->ip(),"upfilepath"=>"app/public/faguploads/".$filename,"downfilepath"=>"images/fagoutput/".$filename,"created_at"=>date('Y-m-d H:i:s'),"updated_at"=>date('Y-m-d H:i:s'));
+        DB::table('files')->insert($data);
         /* Store $imageName name in DATABASE from HERE */
         
         

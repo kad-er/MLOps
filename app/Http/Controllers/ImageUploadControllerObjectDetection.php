@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use SSH;
 use Log;
+use DB;
 
 class ImageUploadControllerObjectDetection extends Controller
 {
@@ -33,7 +34,8 @@ class ImageUploadControllerObjectDetection extends Controller
         
         $request->image->storeAs('', $filename, 'gdrive2');
         $request->image->storeAs('', $filename, 'objectdetup');
-
+        $data=array('name'=>$filename,"filetype"=>$retfile,"service"=>"object detection","userid"=>$request->ip(),"upfilepath"=>"app/public/objdetuploads/".$filename,"downfilepath"=>'images/objdetoutput/'.$filename,"created_at"=>date('Y-m-d H:i:s'),"updated_at"=>date('Y-m-d H:i:s'));
+        DB::table('files')->insert($data);
         Log::info("stored");
         /* Store $imageName name in DATABASE from HERE */
         $ssh=SSH::into('production')->define('deploy1', array(

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use SSH;
 use Illuminate\Support\Facades\File;
+use DB;
 
 class ImageUploadController extends Controller
 {
@@ -38,6 +39,8 @@ class ImageUploadController extends Controller
         $request->image->storeAs('', $filename, 'gdrive');
 
         $request->image->storeAs('', $filename, 'skinsegup');
+        $data=array('name'=>$filename,"filetype"=>"nifti file","service"=>"skin segmentation","userid"=>$request->ip(),"upfilepath"=>"app/public/skinseguploads/".$filename,"downfilepath"=>'images/skinsegoutput/'.$file.'_output.jpg',"created_at"=>date('Y-m-d H:i:s'),"updated_at"=>date('Y-m-d H:i:s'));
+        DB::table('files')->insert($data);
         /* Store $imageName name in DATABASE from HERE */
         $localPath2='images/skinsegoutput/'.$file.'_output.nii.gz';
         $localPath='images/skinsegoutput/'.$file.'_output.jpg';

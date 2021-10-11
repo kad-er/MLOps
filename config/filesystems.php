@@ -41,6 +41,12 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'public2' => [
+            'driver' => 'local',
+            'root' => public_path().'/images',
+            'url' => '/images',
+            'visibility' => 'public',
+        ],
 
         'skinsegup' => [
             'driver' => 'local',
