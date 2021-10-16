@@ -57,6 +57,15 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
+
+
+## Configurations: 
+
+If you want to use this project, you have to downlaod and unzip the deployed scripts then upload them to your google drive.
+After that , you need to configure the laravel filesystem gdrive, gdrive2 and gdrive3 which refers respectivey to skin segmentation, object detection , face and gender detection; By adding the respective folderid , the client id, refresh token and the client secret.
+For the configuration of the contact form , go to the .env file and change the email and its password.
+Lastely , for the database , you need to update the .env file by changing the database parameters.
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
